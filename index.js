@@ -154,7 +154,7 @@ module.exports = function (opts) {
 
                 // new svg file
                 var svgFile = file.clone();
-                svgFile.path = rename(svgFile.path, { ext: '.svg', name: glyf.name });
+                svgFile.path = rename(svgFile.path, { ext: '.svg', name: _name });
                 svgFile.contents = new Buffer(renderSVG(glyfObject));
                 this.push(svgFile);
 
@@ -162,8 +162,9 @@ module.exports = function (opts) {
                 glyfMap[_name] = {};
                 assignHas(glyfMap[_name], glyfObject, ['d', 'viewBox', 'acent']);
 
+                // set size
                 if (opts.size) {
-                    glyfMap[_name] = opts.size;
+                    glyfMap[_name].size = opts.size;
                 } else {
                     assignHas(glyfMap[_name], glyfObject, ['width', 'height']);
                 }

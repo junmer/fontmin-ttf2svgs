@@ -1,6 +1,6 @@
 {
   "name": "fontmin-ttf2svgs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fontmin ttf2svgs plugin",
   "main": "index.js",
   "scripts": {

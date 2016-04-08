@@ -155,7 +155,7 @@ module.exports = opts => {
 
                 // new svg file
                 let svgFile = file.clone();
-                svgFile.path = rename(svgFile.path, {ext: '.svg', name: glyf.name});
+                svgFile.path = rename(svgFile.path, {ext: '.svg', name: name});
                 svgFile.contents = new Buffer(renderSVG(glyfObject));
                 this.push(svgFile);
 
@@ -163,8 +163,9 @@ module.exports = opts => {
                 glyfMap[name] = {};
                 assignHas(glyfMap[name], glyfObject, ['d', 'viewBox', 'acent']);
 
+                // set size
                 if (opts.size) {
-                    glyfMap[name] = opts.size;
+                    glyfMap[name].size = opts.size;
                 }
                 else {
                     assignHas(glyfMap[name], glyfObject, ['width', 'height']);
