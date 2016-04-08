@@ -1,0 +1,35 @@
+{
+  "name": "fontmin-ttf2svgs",
+  "version": "0.0.1-alpha.2",
+  "description": "fontmin ttf2svgs plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "babel source.js > index.js",
+    "my_publish": "npm run build && npm publish"
+  },
+  "repository": "junmer/fontmin-ttf2svgs",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "icon",
+    "font",
+    "svg",
+    "ttf2svgs",
+    "fontmin"
+  ],
+  "author": "junmer",
+  "license": "MIT",
+  "dependencies": {
+    "b3b": "0.0.1",
+    "fonteditor-core": "0.0.17",
+    "lodash": "^4.8.2",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "del": "^2.2.0",
+    "mocha": "^2.1.0",
+    "vinyl-fs": "^2.3.1"
+  }
+}
